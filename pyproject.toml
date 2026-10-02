@@ -1,0 +1,9 @@
+[project]
+name = "sales-1m-dbt"
+version = "0.1.0"
+description = "dbt transformations on a 1M+ row synthetic sales dataset (DuckDB, BigQuery-ready)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "dbt-core>=1.10,<2",
+    "dbt-duckdb>=1.9,<2",
+]

@@ -1,0 +1,16 @@
+sales:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: warehouse/sales.duckdb
+      threads: 4
+
+    # BigQuery target (needs `uv add dbt-bigquery` + `gcloud auth application-default login`)
+    bigquery:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('GCP_PROJECT', 'not-set') }}"
+      dataset: analytics
+      location: US
+      threads: 4

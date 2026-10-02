@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Setup (install deps + create 1.2M rows)", "type": "shell", "command": "uv sync && uv run python scripts/generate_data.py" },
+    { "label": "dbt build (seed + run + test)", "type": "shell", "command": "uv run dbt build", "group": { "kind": "build", "isDefault": true } },
+    { "label": "dbt docs (open lineage site)", "type": "shell", "command": "uv run dbt docs generate && uv run dbt docs serve --port 8082" }
+  ]
+}

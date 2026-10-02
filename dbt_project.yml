@@ -1,0 +1,16 @@
+name: sales
+version: "1.0.0"
+config-version: 2
+profile: sales
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+models:
+  sales:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

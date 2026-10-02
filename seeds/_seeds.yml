@@ -1,0 +1,7 @@
+version: 2
+seeds:
+  - name: city_regions
+    description: Static lookup mapping each city to country and sales region.
+    columns:
+      - name: city
+        data_tests: [unique, not_null]

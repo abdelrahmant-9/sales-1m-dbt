@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: One row per transaction (1.2M rows).
+    columns:
+      - name: transaction_id
+        data_tests: [unique, not_null]
+  - name: monthly_category_sales
+    description: Revenue per month and product category.
+  - name: region_channel_sales
+    description: Revenue per customer region and store channel.
+  - name: customer_summary
+    description: Total spend per customer with High / Medium / Low level.
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+      - name: value_level
+        data_tests:
+          - accepted_values:
+              arguments: {values: [High, Medium, Low]}
